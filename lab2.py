@@ -34,11 +34,29 @@ def fine_min_max(num):
     print ("Maximum", maximum)
     print ("Minimum", minimum)
 
-def sort_temperature():
+def sort_temperature(num):
     print("Sort Teemperature")
 
-def cal_median_temp():
+    sorted_list = sorted(num)
+    print (sorted_list)
+    return sorted_list
+
+
+def cal_median_temp(num):
     print("Median Temperature")
+    sorted_list = sort_temperature(num)
+
+    length = len(sorted_list)
+
+    if length % 2 == 0:
+        mid1 = length // 2 -1
+        mid2 = length // 2
+        median = (sorted_list[mid1]+sorted_list[mid2])//2
+    else:
+        mid = length // 2
+        median = sorted_list[mid]
+    
+    print (median)
 
 def main():
     display_main_menu()
@@ -46,6 +64,8 @@ def main():
     print ("YOU ENTERED", numbers)
     cal_average(numbers)
     fine_min_max(numbers)
+    sort_temperature(numbers)
+    cal_median_temp(numbers)
 
 if __name__ == "__main__":
     main()
